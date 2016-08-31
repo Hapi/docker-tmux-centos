@@ -1,0 +1,6 @@
+FROM centos:5
+
+RUN yum -y update && yum install -y gcc kernel-devel make ncurses-devel
+COPY build-tmux.sh /
+ENTRYPOINT ["./build-tmux.sh", "5"]
+CMD ["2.0.22", "2.2"]
